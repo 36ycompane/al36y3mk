@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التسجيل | Register</title>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <nav>
+            <ul>
+                <a href="index.html">المنتجات</a></li>
+                <a href="register.html">التسجيل | Register</a></li>
+                <a href="menu.html">قائمة الطعام | Menu</a></li>
+                              
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <h1>إنشاء حساب جديد | Create New Account</h1>
+
+        <form action="#" method="post">
+            <fieldset>
+                <legend>معلومات التسجيل | Registration Information</legend>
+
+                <label for="fullname">الاسم الكامل | Full Name:</label><br>
+                <input type="text" id="fullname" name="fullname" placeholder="أدخل اسمك الكامل" required><br><br>
+
+                <label for="email">البريد الإلكتروني | Email:</label><br>
+                <input type="email" id="email" name="email" placeholder="example@email.com" required><br><br>
+
+                <label for="password">كلمة المرور | Password:</label><br>
+                <input type="password" id="password" name="password" placeholder="أدخل كلمة المرور" required><br><br>
+
+                <button type="submit">تسجيل | Register</button>
+            </fieldset>
+        </form>
+
+        <p id="registrationMessage"></p>
+    </main>
+
+
+    <!-- Simple JS Interaction -->
+    <script>
+        const form = document.querySelector('form');
+        const message = document.getElementById('registrationMessage');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('fullname').value.trim();
+            const email = document.getElementById('email').value.trim();
+
+            if (name && email) {
+                message.textContent = `تم التسجيل بنجاح، ${name}! | Registration successful, ${name}!`;
+            } else {
+                message.textContent = 'يرجى ملء جميع الحقول. | Please fill in all fields.';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+   <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الرئيسية | Home</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+            <a href="index.html">المنتجات</a></li>
+                <a href="register.html">التسجيل | Register</a></li>
+                <a href="menu.html">قائمة الطعام | Menu</a></li>
+                              
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>مرحبا بكم بل حج الذكي</h1>
+
+        <form id="nameForm">
+            <fieldset>
+                <legend>أدخل اسمك | Enter Your Name</legend>
+                <label for="username">من فضلك أدخل اسمك: | Please enter your name:</label><br />
+                <input type="text" id="username" name="username" required />
+                <button type="submit">إرسال | Submit</button>
+            </fieldset>
+        </form>
+
+        <p id="welcomeMessage"></p>
+    </main>
+
+    <footer>
+        <!-- Add any footer content here, e.g., copyright or links -->
+    </footer>
+
+    <script>
+        const form = document.getElementById('nameForm');
+        const welcomeMessage = document.getElementById('welcomeMessage');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('username').value.trim();
+            if(name){
+                welcomeMessage.textContent = `مرحباً ${name}! أهلاً بك في مطعمنا. | Hello ${name}! Welcome to our Restaurant.`;
+            }
+        });
+    </script>
+</body>
+</html>
